@@ -320,6 +320,10 @@ foreach my $host ( sort(keys(%Status)) ) {
 ###########################################################################
 # Generate sysadmin warning message
 ###########################################################################
+# re-read main configuration to get the correct EMailAdminUserName used below
+$bpc->ConfigRead();
+%Conf = $bpc->Conf();
+
 my $adminMesg = "";
 
 if ( @AdminBadHosts ) {
