@@ -102,6 +102,7 @@ sub start
             for ( my $i = 0 ; $i < @{$t->{fileList}} ; $i++ ) {
                 $t->{fileList}[$i] = substr($t->{fileList}[$i], length($t->{pathHdrSrc}));
             }
+            $srcDir=$t->{pathHdrSrc} if ($t->{pathHdrSrc});
             $t->{XferLOG}->write(\"Trimming $t->{pathHdrSrc} from filesList\n");
         }
 
